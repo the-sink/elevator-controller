@@ -7,10 +7,10 @@ local currentFloor = 1
 local targetSpeed
 
 local screenNumbers = { -- floor = shaft screen #, hallway screen #.
-    floor1 = {9, 10};
-    floor2 = {6, 12};
-    floor3 = {4, 3};
-    floor4 = {11, 13]:
+    floor1 = {9, 10},
+    floor2 = {6, 12},
+    floor3 = {4, 3},
+    floor4 = {11, 13}
 }
 
 local function returnToGround()
