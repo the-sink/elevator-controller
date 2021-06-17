@@ -6,7 +6,7 @@ local motor = peripheral.wrap("bottom")
 local currentFloor = 1
 local targetSpeed
 
-local screenNumbers = { -- floor = shaft screen #, hallway screen #
+local screenNumbers = { -- floor = shaft screen #, hallway screen #.
     floor1 = {9, 10};
     floor2 = {6, 12};
     floor3 = {4, 3};
