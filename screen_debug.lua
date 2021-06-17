@@ -6,7 +6,7 @@ for _, name in pairs(peripherals) do
         monitor.clear()
         monitor.setTextScale(0.5)
         monitor.setCursorPos(1, 1)
-        monitor.write(string.sub(name, -1))
+        monitor.write(name)
         print(name)
     end
 end
