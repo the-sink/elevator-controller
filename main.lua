@@ -35,7 +35,8 @@ end
 
 returnToGround()
 
-for i, floor in pairs(screens) do
+local i = 1
+for _, floor in pairs(screens) do
     -- initialize monitor variables as peripherals
     floor[1] = peripheral.wrap("monitor_"..floor[1])
     floor[2] = peripheral.wrap("monitor_"..floor[2])
@@ -43,10 +44,12 @@ for i, floor in pairs(screens) do
     local shaftScreen = floor[1]
     local hallScreen = floor[2]
 
-    shaftScreen.clear()
-    shaftScreen.setTextScale(0.5)
-    shaftScreen.setCursorPos(1, 1)
-    shaftScreen.write(i)
+    hallScreen.clear()
+    hallScreen.setTextScale(0.5)
+    hallScreen.setCursorPos(1, 2)
+    hallScreen.write("Floor "..i..":")
+
+    i = i + 1
 end
 
 while true do
