@@ -7,10 +7,10 @@ local currentFloor = 1
 local targetSpeed
 
 local screens = { -- floor = shaft screen #, hallway screen #.
-    floor1 = {9, 10},
-    floor2 = {6, 12},
-    floor3 = {4, 3},
-    floor4 = {11, 13}
+    ["1"] = {9, 10},
+    ["2"] = {6, 12},
+    ["3"] = {4, 3},
+    ["4"] = {11, 13}
 }
 
 local function returnToGround()
@@ -35,8 +35,7 @@ end
 
 returnToGround()
 
-local i = 1
-for _, floor in pairs(screens) do
+for i, floor in pairs(screens) do
     -- initialize monitor variables as peripherals
     floor[1] = peripheral.wrap("monitor_"..floor[1])
     floor[2] = peripheral.wrap("monitor_"..floor[2])
@@ -50,8 +49,6 @@ for _, floor in pairs(screens) do
     hallScreen.setTextScale(0.5)
     hallScreen.setCursorPos(1, 1)
     hallScreen.write("Floor "..i..":")
-
-    i = i + 1
 end
 
 while true do
