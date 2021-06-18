@@ -6,7 +6,7 @@ local motor = peripheral.wrap("bottom")
 local currentFloor = 1
 local targetSpeed
 
-local screenNumbers = { -- floor = shaft screen #, hallway screen #.
+local screens = { -- floor = shaft screen #, hallway screen #.
     floor1 = {9, 10},
     floor2 = {6, 12},
     floor3 = {4, 3},
@@ -34,5 +34,24 @@ local function moveToFloor(targetFloor)
 end
 
 returnToGround()
+
+for i, floor in pairs(screens) do
+    -- initialize monitor variables as peripherals
+    floor[1] = peripheral.wrap("monitor_"..floor[1])
+    floor[2] = peripheral.wrap("monitor_"..floor[2])
+
+    local shaftScreen = floor[1]
+    local hallScreen = floor[2]
+
+    shaftScreen.clear()
+    shaftScreen.setTextScale(0.5)
+    shaftScreen.setCursorPos(1, 1)
+    shaftScreen.write(i)
+end
+
+while true do
+    local event = {os.pullEvent("monitor_touch")}
+    print("touch event fired")
+end
 
 -- do stuff
