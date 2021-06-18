@@ -44,9 +44,11 @@ for _, floor in pairs(screens) do
     local shaftScreen = floor[1]
     local hallScreen = floor[2]
 
+    print(i)
+
     hallScreen.clear()
     hallScreen.setTextScale(0.5)
-    hallScreen.setCursorPos(1, 2)
+    hallScreen.setCursorPos(1, 1)
     hallScreen.write("Floor "..i..":")
 
     i = i + 1
